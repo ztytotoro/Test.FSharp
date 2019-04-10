@@ -10,7 +10,8 @@ type ValuesController () =
     [<HttpGet>]
     member this.Get() =
         let values = [|"value1"; "value2"|]
-        ActionResult<string[]>(values)
+        this.Ok(values)
+        // ActionResult<string[]>(values)
 
     [<HttpGet("{id}")>]
     member this.Get(id:int) =
